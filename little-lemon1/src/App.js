@@ -7,12 +7,10 @@ import { Nav } from "./components/Nav";
 function App() {
   return (
     <>
-      <h1>Test</h1>
-      <div className="top1">
-        <Header />
+      <div>
         <Nav />
       </div>
-      <Main />
+
       <Footer />
     </>
   );
