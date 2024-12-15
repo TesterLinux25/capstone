@@ -7,6 +7,7 @@ import { Reservation } from "./Reservation";
 import { OrderOnline } from "./OrderOnline";
 import { Login } from "./Login";
 import { Header } from "./Header";
+import { Confirmation } from "./Confirmation";
 
 export const Nav = () => {
   return (
@@ -55,6 +56,7 @@ export const Nav = () => {
         <Route path="/reservations" element={<Reservation />} />
         <Route path="/orderonline" element={<OrderOnline />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/confirmation" element={<Confirmation />} />
       </Routes>
     </>
   );
