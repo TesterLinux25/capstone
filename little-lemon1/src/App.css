@@ -80,3 +80,48 @@ label {
   background-color: rgb(152, 128, 128);
   padding-left: 5px;
 }
+.confirmation {
+  display: flex;
+  flex-direction: column;
+  background-color: #b66540;
+  align-items: center;
+  justify-content: center;
+  color: #edefee;
+}
+.display1 {
+  background-color: #b66540;
+  padding: 2rem 26rem;
+}
+.display {
+  display: flex;
+  flex-direction: column;
+  background-color: #b6b894;
+  align-items: center;
+  justify-content: center;
+  color: rgb(114, 104, 32);
+  font-size: 25px;
+  border-radius: 5px;
+}
+.table {
+  display: flex;
+  flex-direction: row;
+  background-color: #b66540;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
+}
+.tableButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(7, 65, 65);
+  border-radius: 10px;
+  padding: 25px;
+  font-size: 25px;
+}
+.spant {
+  background-color: yellow;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 25px;
+}

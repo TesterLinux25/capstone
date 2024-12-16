@@ -1,9 +1,9 @@
 import React from "react";
 
-export const Confirmation = () => {
+export const Confirmation = (props) => {
   return (
     <div className="confirmation">
-      <p>Your reservation is succesfull!</p>
+      <h1>Your reservation is succesfull!</h1>
     </div>
   );
 };

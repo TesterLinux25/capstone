@@ -8,6 +8,8 @@ import { OrderOnline } from "./OrderOnline";
 import { Login } from "./Login";
 import { Header } from "./Header";
 import { Confirmation } from "./Confirmation";
+import { BookingForm } from "./BookingForm";
+import { Tables } from "./Tables";
 
 export const Nav = () => {
   return (
@@ -53,7 +55,7 @@ export const Nav = () => {
         <Route path="/" element={<Main />} />
         <Route path="/about" element={<About />} />
         <Route path="/menu" element={<Menu />} />
-        <Route path="/reservations" element={<Reservation />} />
+        <Route path="/reservations" element={<BookingForm />} />
         <Route path="/orderonline" element={<OrderOnline />} />
         <Route path="/login" element={<Login />} />
         <Route path="/confirmation" element={<Confirmation />} />

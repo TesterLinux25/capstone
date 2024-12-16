@@ -1,59 +1,33 @@
 import React, { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import { Main } from "./Main";
-import { useNavigate } from "react-router-dom";
 
-export const Reservation = () => {
-  const [number, setNumber] = useState("");
-
-  const [time, setTime] = useState("");
-  const [special, setSpecial] = useState("");
-  const [date, setDate] = useState("");
-  const navigate = useNavigate();
-  const selectime = [
-    { label: "18:00", value: "18:00" },
-    { label: "19:00", value: "19:00" },
-    { label: "20:00", value: "20:00" },
-    { label: "21:00", value: "21:00" },
-    { label: "22:00", value: "22:00" },
-    { label: "23:00", value: "23:00" },
-  ];
-  const occasion = [
-    { label: "", value: "" },
-    { label: "Birthday", value: "Birthday" },
-    { label: "Anniversary", value: "Anniversary" },
-  ];
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(
-      `You reserved on ${date} at ${time} \n Number of guests: ${number} \n Special ocassion: ${special} `
-    );
-    // console.log(number, time, special);
-    return navigate("/confirmation");
-  };
+export const Reservation = (props) => {
   return (
     <>
       <div className="myform">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={props.handleSubmit}>
           <label for="res-date" className="mylabel">
             Choose date
           </label>
           <input
             type="date"
             id="res-date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
+            value={props.date}
+            onChange={(e) => props.setDate(e.target.value)}
             required
+            disabled={props.isDisabled}
           />
           <label for="res-time" className="mylabel">
             Choose time
           </label>
           <select
             id="res-time "
-            onChange={(e) => setTime(e.target.value)}
+            onChange={(e) => props.setTime(e.target.value)}
+            disabled={props.isDisabled}
             required
           >
-            {selectime.map((option) => (
+            {props.selectime.map((option) => (
               <option value={option.value}>{option.value}</option>
             ))}
           </select>
@@ -66,21 +40,27 @@ export const Reservation = () => {
             min="1"
             max="10"
             id="guests"
-            value={number}
-            onChange={(e) => setNumber(e.target.value)}
+            value={props.number}
+            onChange={props.numberChange}
+            disabled={props.isDisabled}
             required
           />
           <label for="occasion" className="mylabel">
             Occasion
           </label>
-          <select id="occasion" onChange={(e) => setSpecial(e.target.value)}>
-            {occasion.map((option) => (
+          <select
+            id="occasion"
+            disabled={props.isDisabled}
+            onChange={(e) => props.setSpecial(e.target.value)}
+          >
+            {props.occasion.map((option) => (
               <option value={option.value}>{option.value}</option>
             ))}
           </select>
           <input
             type="submit"
             value="Make Your reservation"
+            disabled={props.isDisabled}
             className="mybutton"
           />
         </form>
